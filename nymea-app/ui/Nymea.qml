@@ -137,7 +137,7 @@ ApplicationWindow {
         }
     }
 
-    property var supportedInterfaces: ["light", "weather", "sensor", "media", "garagegate", "extendedawning", "extendedshutter", "extendedblind", "button", "notifications", "inputtrigger", "outputtrigger", "gateway"]
+    property var supportedInterfaces: ["light", "weather", "sensor", "media", "garagegate", "awning", "shutter", "blind", "button", "notifications", "inputtrigger", "outputtrigger", "gateway"]
     function interfaceToString(name) {
         switch(name) {
         case "light":
@@ -228,10 +228,11 @@ ApplicationWindow {
         case "blind":
         case "extendedblind":
             return Qt.resolvedUrl("images/DeviceIconBlind.svg")
-        case "garagegate":
-            return Qt.resolvedUrl("images/shutter/shutter-100.svg")
+        case "awning":
         case "extendedawning":
             return Qt.resolvedUrl("images/awning/awning-100.svg")
+        case "garagegate":
+            return Qt.resolvedUrl("images/shutter/shutter-100.svg")
         case "battery":
             return Qt.resolvedUrl("images/battery/battery-050.svg")
         case "uncategorized":
@@ -258,10 +259,36 @@ ApplicationWindow {
         switch (name) {
         case "light":
             return qsTr("light")
-        case "button":
-            return "button";
+        case "weather":
+            return qsTr("weather service");
         case "sensor":
+        case "temperaturesensor":
+        case "humiditysensor":
+        case "pressuresensor":
             return qsTr("sensor")
+        case "media":
+            return qsTr("media player");
+        case "garagegate":
+            return qsTr("garage gate");
+        case "awning":
+        case "extendedawning":
+            return qsTr("awning");
+        case "shutter":
+        case "extendedshutter":
+            return qsTr("shutter");
+        case "blind":
+        case "extendedblind":
+            return qsTr("blind");
+        case "button":
+            return qsTr("button");
+        case "notifications":
+            return qsTr("notification service");
+        case "inputtrigger":
+            return qsTr("event source");
+        case "outputtrigger":
+            return qsTr("trigger");
+        case "gateway":
+            return qsTr("gateway");
         }
     }
 
